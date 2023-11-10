@@ -3,12 +3,37 @@ package exception;
 public class First {
 
     public static void main(String[] args) {
-        divideByZero();
-        accessToUnexistingElement();
-        playWithNullPointer();
-        tryToCreateFunnyArray();
-        searchSomethingOutString();
-        System.out.println("Ура! Меня снова печают");
+        try {
+            divideByZero();
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Деление на 0!");
+        }
+        try {
+            accessToUnexistingElement();
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Выход за пределы массива!");
+        }
+        try {
+            playWithNullPointer();
+        }
+        catch (NullPointerException e) {
+            System.out.println("Обращение к null!");
+        }
+        try {
+            tryToCreateFunnyArray();
+        }
+        catch (NegativeArraySizeException e) {
+            System.out.println("Отрицательный размер массива!");
+        }
+        try {
+            searchSomethingOutString();
+        }
+        catch (StringIndexOutOfBoundsException e) {
+            System.out.println("Выход за пределы строки!");
+        }
+        System.out.println("Ура! Меня снова печатают");
     }
 
 
